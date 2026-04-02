@@ -1,0 +1,22 @@
+[project]
+name = "semantic-linter"
+version = "0.1.0"
+description = "SAX-based narrative pacing quality control for longform text"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Fred Zimmerman", email = "wfz@nimblebooks.com"}]
+dependencies = [
+    "numpy>=1.24",
+    "sentence-transformers>=2.2",
+]
+
+[project.optional-dependencies]
+pdf = ["pymupdf>=1.23"]
+
+[project.scripts]
+semantic-lint = "semantic_linter.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"
